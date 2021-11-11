@@ -1,21 +1,34 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { Text, View, StyleSheet, Image } from "react-native";
+import diamondImage from './assets/diamond-red.png';
 
-export default function App() {
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View style={styleSheet.container}>
+      <Text style={styleSheet.text}>Hello World</Text>
+      <Image
+      source={{uri: 'https://picsum.photos/200/300'}}
+      style={styleSheet.image}></Image>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
+const styleSheet = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
+    flex: 1, 
+    alignItems: "center",
     justifyContent: 'center',
+    backgroundColor: "#292929"
   },
+  text: {
+    fontSize: 30,
+    color: '#fff'
+  },
+  image: {
+    height: 200, 
+    width: 200,
+    borderRadius: 100,
+  }
 });
+
+export default App;
